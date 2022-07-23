@@ -25,11 +25,11 @@
             nameInput.value = ''
 
             res.data.forEach((characterName, index) => {
-                container.innerHTML += `<p name=${index}>{characterName}</p>`
+                container.innerHTML += `<p name=${index}>${characterName}</p>`
             })
 
             document.querySelectorAll('p').forEach(element => {
-                const theIndexValue = element.gettAttribute('name');
+                const theIndexValue = element.getAttribute('name');
 
                 element.addEventListener('click', () => {
                     axios
@@ -52,7 +52,7 @@
                 .catch(err => {
                     nameInput.value = ''
 
-                    const notif = document.creatElement('aside')
+                    const notif = document.createElement('aside')
                     notif.innerHTML = `<p>${err.response.data}</p>
                     <button class="close">close</button>`
                     document.body.appendChild(notif)
