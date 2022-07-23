@@ -33,7 +33,7 @@
 
                 element.addEventListener('click', () => {
                     axios
-                        .delete(`/api/characters/${theIndexValue}`)
+                        .delete(`http://localhost:5050/api/characters/${theIndexValue}`)
                         .then(res => {
                             putTheThingInTheView(res)
                         })
@@ -45,7 +45,7 @@
             evt.preventDefault();
 
             axios
-                .post('/api/characters', { name: nameInput.value })
+                .post('http://localhost:5050/api/characters', { name: nameInput.value })
                 .then(res => {
                     putTheThingInTheView(res)
                 })
@@ -66,7 +66,7 @@
         }
                     // get character list on initial load
                     axios
-                    .get('/api/characters')
+                    .get('http://localhost:5050/api/characters')
                     .then(res => {
                         putTheThingInTheView(res)
                     })
