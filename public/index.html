@@ -32,7 +32,7 @@
 
                 element.addEventListener('click', () => {
                     axios
-                        .delete(`/api/characters/${theIndexValue}`)
+                        .delete(`http://localhost:5050/api/characters/${theIndexValue}`)
                         .then(res => {
                             putTheThingInTheView(res)
                         })
